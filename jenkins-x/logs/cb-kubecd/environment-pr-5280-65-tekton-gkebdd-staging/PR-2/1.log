@@ -1,0 +1,85 @@
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-6269j[0m
+{"level":"warn","ts":1568284211.0504494,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568284211.0515614,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-t7vr7[0m
+{"level":"warn","ts":1568284214.9471555,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568284214.9491997,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-cb-kubecd-environment-pr-5-f62pk[0m
+{"level":"warn","ts":1568284318.2899418,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"error","ts":1568284318.9554248,"logger":"fallback-logger","caller":"git/git.go:35","msg":"Error running git [fetch --depth=1 --recurse-submodules=yes origin 7f90ce61f74e51bd9f53de244b1f9b37790b9982]: exit status 128\nerror: Server does not allow request for unadvertised object 7f90ce61f74e51bd9f53de244b1f9b37790b9982\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\t/workspace/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:35\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\t/workspace/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:88\nmain.main\n\t/workspace/go/src/github.com/tektoncd/pipeline/cmd/git-init/main.go:36\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:200"}
+{"level":"error","ts":1568284319.765443,"logger":"fallback-logger","caller":"git/git.go:35","msg":"Error running git [pull --recurse-submodules=yes origin]: exit status 1\nFrom https://github.com/cb-kubecd/environment-pr-5280-65-tekton-gkebdd-staging\n * [new branch]      gh-pages   -> origin/gh-pages\n * [new branch]      master     -> origin/master\nYou asked to pull from the remote 'origin', but did not specify\na branch. Because this is not the default configured remote\nfor your current branch, you must specify a branch on the command line.\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\t/workspace/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:35\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\t/workspace/go/src/github.com/tektoncd/pipeline/pkg/git/git.go:91\nmain.main\n\t/workspace/go/src/github.com/tektoncd/pipeline/cmd/git-init/main.go:36\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:200"}
+{"level":"warn","ts":1568284319.7655447,"logger":"fallback-logger","caller":"git/git.go:92","msg":"Failed to pull origin : exit status 1"}
+{"level":"info","ts":1568284319.7709894,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cb-kubecd/environment-pr-5280-65-tekton-gkebdd-staging.git @ 7f90ce61f74e51bd9f53de244b1f9b37790b9982 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7f90ce61f74e51bd9f53de244b1f9b37790b9982,2:24017a34a9da64d0079a900e424886eb72716711
+DEBUG: ran git fetch origin 24017a34a9da64d0079a900e424886eb72716711: 7f90ce61f74e51bd9f53de244b1f9b37790b9982: in 
+DEBUG: Unshallowed git repo in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 7f90ce61f74e51bd9f53de244b1f9b37790b9982 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 24017a34a9da64d0079a900e424886eb72716711 in 
+Merged SHA 24017a34a9da64d0079a900e424886eb72716711 with commit message 'chore: Promote bdd-gh-1568284021 to version 0.0.1' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: ran git fetch origin 24017a34a9da64d0079a900e424886eb72716711: 7f90ce61f74e51bd9f53de244b1f9b37790b9982: in 
+DEBUG: Unshallowed git repo in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 7f90ce61f74e51bd9f53de244b1f9b37790b9982 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 24017a34a9da64d0079a900e424886eb72716711 in 
+Merged SHA 24017a34a9da64d0079a900e424886eb72716711 with commit message 'chore: Promote bdd-gh-1568284021 to version 0.0.1' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+selected pack: /builder/home/.**/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs/environment
+Effective pipeline written to jenkins-x-promotion-build-effective.yml
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+PipelineActivity for cb-kubecd-environment-pr-5280-65-tekton-gkebdd-staging-PR-2-1
+Applying changes 
+upserted PipelineResource cb-kubecd-environment-pr-5280-6 for the git repository https://github.com/cb-kubecd/environment-pr-5280-65-tekton-gkebdd-staging.git
+upserted Task cb-kubecd-environment-pr-5280-6-qvjlv-from-build-pack-1
+upserted Pipeline cb-kubecd-environment-pr-5280-6-qvjlv-1
+created PipelineRun cb-kubecd-environment-pr-5280-6-qvjlv-1
+created PipelineStructure cb-kubecd-environment-pr-5280-6-qvjlv-1
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-vlzls[0m
+{"level":"warn","ts":1568284337.4556708,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568284337.4626658,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-j6n9p[0m
+{"level":"warn","ts":1568284338.0580401,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568284338.060577,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/env\""}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-environment-pr-5280-6-b88qm[0m
+{"level":"warn","ts":1568284389.15326,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568284391.1539032,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cb-kubecd/environment-pr-5280-65-tekton-gkebdd-staging.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7f90ce61f74e51bd9f53de244b1f9b37790b9982,2:24017a34a9da64d0079a900e424886eb72716711
+DEBUG: ran git fetch origin 24017a34a9da64d0079a900e424886eb72716711: 7f90ce61f74e51bd9f53de244b1f9b37790b9982: in 
+DEBUG: Unshallowed git repo in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 7f90ce61f74e51bd9f53de244b1f9b37790b9982 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 24017a34a9da64d0079a900e424886eb72716711 in 
+Merged SHA 24017a34a9da64d0079a900e424886eb72716711 with commit message 'chore: Promote bdd-gh-1568284021 to version 0.0.1' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-pr-5280-6-qvjlv-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-build[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
